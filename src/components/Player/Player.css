@@ -1,0 +1,9 @@
+.player,
+.player .video-js {
+  width: 70%;
+  position: relative;
+  display: flex;
+}
+
+
+

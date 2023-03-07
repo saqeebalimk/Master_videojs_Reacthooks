@@ -1,0 +1,7 @@
+{
+    "HOME": "/",
+    "STATIC": "/static",
+    "DYNAMIC": "/dynamic/:index",
+    "DYNAMIC_WITH_API": "/dynamic_with_api/:index"
+  }
+  

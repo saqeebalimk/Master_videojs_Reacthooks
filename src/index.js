@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { Home } from "./page/Home";
+import { Static } from "./page/Static";
+import { Dynamic } from "./page/Dynamic";
+import { DynamicWithApi } from "./page/DynamicWithApi";
+import ROUTES from "./routes.json";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import "./styles.css";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path={ROUTES.HOME} component={Home} />
+        <Route path={ROUTES.STATIC} component={Static} />
+        <Route path={ROUTES.DYNAMIC} component={Dynamic} />
+        <Route path={ROUTES.DYNAMIC_WITH_API} component={DynamicWithApi} />
+      </Switch>
+    </Router>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
